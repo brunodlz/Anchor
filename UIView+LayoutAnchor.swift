@@ -69,7 +69,7 @@ extension UIView {
     anchorRightToSuperview()
   }
   
-  func anchorEdgesToSuperView(excluding: NSLayoutAttribute) {
+  func anchorEdgesToSuperView(omit omit: NSLayoutAttribute) {
     var anchors = [anchorTopToSuperview,
       anchorBottomToSuperview,
       anchorLeftToSuperview,
