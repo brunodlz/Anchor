@@ -25,28 +25,28 @@ import UIKit
 extension UIView {
     
     // MARK: superview
-    func anchorTopToSuperview() -> NSLayoutConstraint {
-        return anchorTopTo((superview?.topAnchor)!)
+    func anchorTopToSuperview(offset offset: CGFloat = 0) -> NSLayoutConstraint {
+        return anchorTopTo((superview?.topAnchor)!, offset: offset)
     }
     
-    func anchorBottomToSuperview() -> NSLayoutConstraint {
-        return anchorBottomTo((superview?.bottomAnchor)!)
+    func anchorBottomToSuperview(offset offset: CGFloat = 0) -> NSLayoutConstraint {
+        return anchorBottomTo((superview?.bottomAnchor)!, offset: offset)
     }
     
-    func anchorLeftToSuperview() -> NSLayoutConstraint {
-        return anchorLeftTo((superview?.leftAnchor)!)
+    func anchorLeftToSuperview(offset offset: CGFloat = 0) -> NSLayoutConstraint {
+        return anchorLeftTo((superview?.leftAnchor)!, offset: offset)
     }
     
-    func anchorRightToSuperview() -> NSLayoutConstraint {
-        return anchorRightTo((superview?.rightAnchor)!)
+    func anchorRightToSuperview(offset offset: CGFloat = 0) -> NSLayoutConstraint {
+        return anchorRightTo((superview?.rightAnchor)!, offset: offset)
     }
     
-    func anchorLeadingToSuperview() -> NSLayoutConstraint {
-        return anchorLeadingTo((superview?.leadingAnchor)!)
+    func anchorLeadingToSuperview(offset offset: CGFloat = 0) -> NSLayoutConstraint {
+        return anchorLeadingTo((superview?.leadingAnchor)!, offset: offset)
     }
     
-    func anchorTrailingToSuperview() -> NSLayoutConstraint {
-        return anchorTrailingTo((superview?.trailingAnchor)!)
+    func anchorTrailingToSuperview(offset offset: CGFloat = 0) -> NSLayoutConstraint {
+        return anchorTrailingTo((superview?.trailingAnchor)!, offset: offset)
     }
     
     func anchorCenterXToSuperview() -> NSLayoutConstraint {
@@ -62,28 +62,25 @@ extension UIView {
         anchorCenterYToSuperview()
     }
     
-    func anchorEdgesToSuperView() {
-        anchorTopToSuperview()
-        anchorBottomToSuperview()
-        anchorLeftToSuperview()
-        anchorRightToSuperview()
-    }
-    
-    func anchorEdgesToSuperView(omit omit: NSLayoutAttribute) {
-        var anchors = [anchorTopToSuperview,
-                       anchorBottomToSuperview,
-                       anchorLeftToSuperview,
-                       anchorRightToSuperview]
-        switch excluding {
+    func anchorEdgesToSuperView(insets insets: UIEdgeInsets = UIEdgeInsetsZero,
+                                       omit: NSLayoutAttribute) {
+        var anchors: [(CGFloat, (CGFloat) -> NSLayoutConstraint)] = [
+            (insets.top, anchorTopToSuperview),
+            (insets.left, anchorLeftToSuperview),
+            (insets.bottom, anchorBottomToSuperview),
+            (insets.right, anchorRightToSuperview),
+            ]
+        
+        switch omit {
         case .Top: _ = anchors.removeAtIndex(0)
-        case .Bottom: _ = anchors.removeAtIndex(1)
-        case .Leading, .Left: _ = anchors.removeAtIndex(2)
+        case .Leading, .Left: _ = anchors.removeAtIndex(1)
+        case .Bottom: _ = anchors.removeAtIndex(2)
         case .Trailing, .Right: _ = anchors.removeAtIndex(3)
         default: break
         }
         
-        for anchor in anchors {
-            anchor()
+        for (offset, anchor) in anchors {
+            anchor(offset)
         }
     }
     
@@ -92,7 +89,7 @@ extension UIView {
         return anchor(self.topAnchor, toAnchor: toAnchor, offset: offset)
     }
     
-    func anchorBottomTo(toAnchor: NSLayoutAnchor) -> NSLayoutConstraint {
+    func anchorBottomTo(toAnchor: NSLayoutAnchor, offset: CGFloat = 0) -> NSLayoutConstraint {
         return anchor(self.bottomAnchor, toAnchor: toAnchor)
     }
     
@@ -104,11 +101,11 @@ extension UIView {
         return anchor(self.rightAnchor, toAnchor: toAnchor, offset: offset)
     }
     
-    func anchorLeadingTo(toAnchor: NSLayoutAnchor) -> NSLayoutConstraint {
+    func anchorLeadingTo(toAnchor: NSLayoutAnchor, offset: CGFloat = 0) -> NSLayoutConstraint {
         return anchor(self.leadingAnchor, toAnchor: toAnchor)
     }
     
-    func anchorTrailingTo(toAnchor: NSLayoutAnchor) -> NSLayoutConstraint {
+    func anchorTrailingTo(toAnchor: NSLayoutAnchor, offset: CGFloat = 0) -> NSLayoutConstraint {
         return anchor(self.trailingAnchor, toAnchor: toAnchor)
     }
     
