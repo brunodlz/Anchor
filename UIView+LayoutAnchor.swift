@@ -63,7 +63,7 @@ extension UIView {
     }
     
     func anchorEdgesToSuperView(insets insets: UIEdgeInsets = UIEdgeInsetsZero,
-                                       omit: NSLayoutAttribute) {
+                                       omit: NSLayoutAttribute = .NotAnAttribute) {
         var anchors: [(CGFloat, (CGFloat) -> NSLayoutConstraint)] = [
             (insets.top, anchorTopToSuperview),
             (insets.left, anchorLeftToSuperview),
