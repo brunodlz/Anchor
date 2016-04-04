@@ -108,6 +108,15 @@ extension UIView {
     func anchorTrailingTo(toAnchor: NSLayoutAnchor, offset: CGFloat = 0) -> NSLayoutConstraint {
         return anchor(self.trailingAnchor, toAnchor: toAnchor)
     }
+
+    // MARK: anchor to NSLayoutDimension
+    func anchorHeightTo(toAnchor: NSLayoutDimension, offset: CGFloat = 0) -> NSLayoutConstraint {
+        return anchor(self.heightAnchor, toAnchor: toAnchor)
+    }
+    
+    func anchorWidthTo(toAnchor: NSLayoutDimension, offset: CGFloat = 0) -> NSLayoutConstraint {
+        return anchor(self.widthAnchor, toAnchor: toAnchor)
+    }
     
     // MARK: private
     private func anchor(anchor: NSLayoutAnchor,
