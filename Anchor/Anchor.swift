@@ -101,6 +101,51 @@ struct Anchor {
             centerY: centerY)
     }
     
+    // MARK: Anchor to superview edges
+    func topToSuperview(constant c: CGFloat = 0) -> Anchor {
+        guard let superview = view.superview else {
+            return self
+        }
+        return top(to: superview.top, constant: c)
+    }
+    
+    func leftToSuperview(constant c: CGFloat = 0) -> Anchor {
+        guard let superview = view.superview else {
+            return self
+        }
+        return left(to: superview.left, constant: c)
+    }
+    
+    func bottomToSuperview(constant c: CGFloat = 0) -> Anchor {
+        guard let superview = view.superview else {
+            return self
+        }
+        return bottom(to: superview.bottom, constant: c)
+    }
+    
+    func rightToSuperview(constant c: CGFloat = 0) -> Anchor {
+        guard let superview = view.superview else {
+            return self
+        }
+        return right(to: superview.right, constant: c)
+    }
+    
+    // MARK: Anchor to superview axises
+    func centerXToSuperview() -> Anchor {
+        guard let superview = view.superview else {
+            return self
+        }
+        return centerX(to: superview.centerX)
+    }
+    
+    func centerYToSuperview() -> Anchor {
+        guard let superview = view.superview else {
+            return self
+        }
+        return centerY(to: superview.centerY)
+    }
+    
+    // MARK: Anchor to edges
     func top(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
         return update(edge: .Top, constraint: view.topAnchor.constraintEqualToAnchor(edge, constant: c))
     }
@@ -117,6 +162,7 @@ struct Anchor {
         return update(edge: .Right, constraint: view.rightAnchor.constraintEqualToAnchor(edge, constant: c))
     }
     
+    // MARK: Anchor to dimensions
     func height(constant c: CGFloat) -> Anchor {
         return update(edge: .Height, constraint: view.heightAnchor.constraintEqualToConstant(c))
     }
@@ -133,6 +179,7 @@ struct Anchor {
         return update(edge: .Width, constraint: view.widthAnchor.constraintEqualToAnchor(dimension, multiplier: m))
     }
     
+    // MAKR: Anchor to axises
     func centerX(to axis: NSLayoutXAxisAnchor, constant c: CGFloat = 0) -> Anchor {
         return update(edge: .CenterX, constraint: view.centerXAnchor.constraintEqualToAnchor(axis, constant: c))
     }
