@@ -9,13 +9,28 @@
 /* Begin PBXBuildFile section */
 		2A8BB22D1CB480D600B8C093 /* Anchor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A8BB22C1CB480D600B8C093 /* Anchor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A8BB2351CB481D100B8C093 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BB2341CB481D100B8C093 /* Anchor.swift */; };
+		2A8BB25A1CB48C7E00B8C093 /* Anchor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8BB2291CB480D600B8C093 /* Anchor.framework */; };
+		2A8BB2611CB48C8900B8C093 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8BB2601CB48C8900B8C093 /* Nimble.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A8BB25B1CB48C7E00B8C093 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A8BB2201CB480D600B8C093 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A8BB2281CB480D600B8C093;
+			remoteInfo = Anchor;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2A8BB2291CB480D600B8C093 /* Anchor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Anchor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8BB22C1CB480D600B8C093 /* Anchor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Anchor.h; sourceTree = "<group>"; };
 		2A8BB22E1CB480D600B8C093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A8BB2341CB481D100B8C093 /* Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
+		2A8BB2551CB48C7E00B8C093 /* AnchorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnchorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A8BB2591CB48C7E00B8C093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A8BB2601CB48C8900B8C093 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +41,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A8BB2521CB48C7E00B8C093 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A8BB25A1CB48C7E00B8C093 /* Anchor.framework in Frameworks */,
+				2A8BB2611CB48C8900B8C093 /* Nimble.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				2A8BB22B1CB480D600B8C093 /* Anchor */,
+				2A8BB2561CB48C7E00B8C093 /* AnchorTests */,
+				2A8BB2631CB48CFE00B8C093 /* Frameworks */,
 				2A8BB22A1CB480D600B8C093 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8BB2291CB480D600B8C093 /* Anchor.framework */,
+				2A8BB2551CB48C7E00B8C093 /* AnchorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +80,22 @@
 				2A8BB22E1CB480D600B8C093 /* Info.plist */,
 			);
 			path = Anchor;
+			sourceTree = "<group>";
+		};
+		2A8BB2561CB48C7E00B8C093 /* AnchorTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A8BB2591CB48C7E00B8C093 /* Info.plist */,
+			);
+			path = AnchorTests;
+			sourceTree = "<group>";
+		};
+		2A8BB2631CB48CFE00B8C093 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A8BB2601CB48C8900B8C093 /* Nimble.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,16 +130,39 @@
 			productReference = 2A8BB2291CB480D600B8C093 /* Anchor.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		2A8BB2541CB48C7E00B8C093 /* AnchorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A8BB25F1CB48C7E00B8C093 /* Build configuration list for PBXNativeTarget "AnchorTests" */;
+			buildPhases = (
+				2A8BB2511CB48C7E00B8C093 /* Sources */,
+				2A8BB2521CB48C7E00B8C093 /* Frameworks */,
+				2A8BB2531CB48C7E00B8C093 /* Resources */,
+				2A8BB2621CB48C8E00B8C093 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A8BB25C1CB48C7E00B8C093 /* PBXTargetDependency */,
+			);
+			name = AnchorTests;
+			productName = AnchorTests;
+			productReference = 2A8BB2551CB48C7E00B8C093 /* AnchorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2A8BB2201CB480D600B8C093 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Kai Lee";
 				TargetAttributes = {
 					2A8BB2281CB480D600B8C093 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					2A8BB2541CB48C7E00B8C093 = {
 						CreatedOnToolsVersion = 7.3;
 					};
 				};
@@ -114,6 +180,7 @@
 			projectRoot = "";
 			targets = (
 				2A8BB2281CB480D600B8C093 /* Anchor */,
+				2A8BB2541CB48C7E00B8C093 /* AnchorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -126,7 +193,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A8BB2531CB48C7E00B8C093 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A8BB2621CB48C8E00B8C093 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A8BB2241CB480D600B8C093 /* Sources */ = {
@@ -137,7 +228,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A8BB2511CB48C7E00B8C093 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A8BB25C1CB48C7E00B8C093 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A8BB2281CB480D600B8C093 /* Anchor */;
+			targetProxy = 2A8BB25B1CB48C7E00B8C093 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2A8BB22F1CB480D600B8C093 /* Debug */ = {
@@ -266,6 +372,34 @@
 			};
 			name = Release;
 		};
+		2A8BB25D1CB48C7E00B8C093 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = AnchorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anchor.AnchorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2A8BB25E1CB48C7E00B8C093 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = AnchorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anchor.AnchorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -286,6 +420,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		2A8BB25F1CB48C7E00B8C093 /* Build configuration list for PBXNativeTarget "AnchorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A8BB25D1CB48C7E00B8C093 /* Debug */,
+				2A8BB25E1CB48C7E00B8C093 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
