@@ -11,6 +11,7 @@
 		2A8BB2351CB481D100B8C093 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BB2341CB481D100B8C093 /* Anchor.swift */; };
 		2A8BB25A1CB48C7E00B8C093 /* Anchor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8BB2291CB480D600B8C093 /* Anchor.framework */; };
 		2A8BB2611CB48C8900B8C093 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8BB2601CB48C8900B8C093 /* Nimble.framework */; };
+		2A8BB2651CB48D7300B8C093 /* AnchorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BB2641CB48D7300B8C093 /* AnchorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		2A8BB2551CB48C7E00B8C093 /* AnchorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnchorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8BB2591CB48C7E00B8C093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A8BB2601CB48C8900B8C093 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		2A8BB2641CB48D7300B8C093 /* AnchorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		2A8BB2561CB48C7E00B8C093 /* AnchorTests */ = {
 			isa = PBXGroup;
 			children = (
+				2A8BB2641CB48D7300B8C093 /* AnchorTests.swift */,
 				2A8BB2591CB48C7E00B8C093 /* Info.plist */,
 			);
 			path = AnchorTests;
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A8BB2651CB48D7300B8C093 /* AnchorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +379,7 @@
 		2A8BB25D1CB48C7E00B8C093 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -383,12 +388,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anchor.AnchorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		2A8BB25E1CB48C7E00B8C093 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
