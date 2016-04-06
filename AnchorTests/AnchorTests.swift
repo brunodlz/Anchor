@@ -179,4 +179,30 @@ class AnchorTests: XCTestCase {
         expect(anchor.top?.active).to(beTrue())
         expect(anchor.left?.active).to(beTrue())
     }
+    
+    func testGreaterOrEqualAnchor() {
+        let anchor = view.anchor()
+            .top(greaterOrEqual: window.top)
+            .left(greaterOrEqual: window.left)
+            .bottom(greaterOrEqual: window.bottom)
+            .right(greaterOrEqual: window.right)
+        
+        expect(anchor.top?.relation).to(equal(NSLayoutRelation.GreaterThanOrEqual))
+        expect(anchor.right?.relation).to(equal(NSLayoutRelation.GreaterThanOrEqual))
+        expect(anchor.bottom?.relation).to(equal(NSLayoutRelation.GreaterThanOrEqual))
+        expect(anchor.right?.relation).to(equal(NSLayoutRelation.GreaterThanOrEqual))
+    }
+    
+    func testLessOrEqualAnchor() {
+        let anchor = view.anchor()
+            .top(lesserOrEqual: window.top)
+            .left(lesserOrEqual: window.left)
+            .bottom(lesserOrEqual: window.bottom)
+            .right(lesserOrEqual: window.right)
+        
+        expect(anchor.top?.relation).to(equal(NSLayoutRelation.LessThanOrEqual))
+        expect(anchor.right?.relation).to(equal(NSLayoutRelation.LessThanOrEqual))
+        expect(anchor.bottom?.relation).to(equal(NSLayoutRelation.LessThanOrEqual))
+        expect(anchor.right?.relation).to(equal(NSLayoutRelation.LessThanOrEqual))
+    }
 }

@@ -168,6 +168,40 @@ public struct Anchor {
         return update(edge: .Right, constraint: view.rightAnchor.constraintEqualToAnchor(edge, constant: c))
     }
     
+    // MARK: Anchor greaterOrEqual
+    public func top(greaterOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Top, constraint: view.topAnchor.constraintGreaterThanOrEqualToAnchor(a, constant: c))
+    }
+    
+    public func left(greaterOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Left, constraint: view.leftAnchor.constraintGreaterThanOrEqualToAnchor(a, constant: c))
+    }
+    
+    public func bottom(greaterOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Bottom, constraint: view.bottomAnchor.constraintGreaterThanOrEqualToAnchor(a, constant: c))
+    }
+    
+    public func right(greaterOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Right, constraint: view.rightAnchor.constraintGreaterThanOrEqualToAnchor(a, constant: c))
+    }
+    
+    // MARK: Anchor lessOrEqual
+    public func top(lesserOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Top, constraint: view.topAnchor.constraintLessThanOrEqualToAnchor(a, constant: c))
+    }
+    
+    public func left(lesserOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Left, constraint: view.leftAnchor.constraintLessThanOrEqualToAnchor(a, constant: c))
+    }
+    
+    public func bottom(lesserOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Bottom, constraint: view.bottomAnchor.constraintLessThanOrEqualToAnchor(a, constant: c))
+    }
+    
+    public func right(lesserOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Right, constraint: view.rightAnchor.constraintLessThanOrEqualToAnchor(a, constant: c))
+    }
+    
     // MARK: Anchor to dimensions
     public func height(constant c: CGFloat) -> Anchor {
         return update(edge: .Height, constraint: view.heightAnchor.constraintEqualToConstant(c))
