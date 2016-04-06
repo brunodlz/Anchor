@@ -79,6 +79,47 @@ class AnchorTests: XCTestCase {
         expect(yAxisAnchor.centerY?.active).to(beFalse())
     }
     
+    func testSuperviewEdgesAnchor() {
+        let anchor = view.anchor().edgesToSuperview()
+        
+        expect(anchor.top?.firstItem).to(beIdenticalTo(view))
+        expect(anchor.top?.firstAttribute).to(equal(NSLayoutAttribute.Top))
+        expect(anchor.top?.secondItem).to(beIdenticalTo(window))
+        expect(anchor.top?.secondAttribute).to(equal(NSLayoutAttribute.Top))
+        expect(anchor.top?.constant).to(equal(0))
+        expect(anchor.top?.active).to(beFalse())
+        
+        expect(anchor.left?.firstItem).to(beIdenticalTo(view))
+        expect(anchor.left?.firstAttribute).to(equal(NSLayoutAttribute.Left))
+        expect(anchor.left?.secondItem).to(beIdenticalTo(window))
+        expect(anchor.left?.secondAttribute).to(equal(NSLayoutAttribute.Left))
+        expect(anchor.left?.constant).to(equal(0))
+        expect(anchor.left?.active).to(beFalse())
+        
+        expect(anchor.bottom?.firstItem).to(beIdenticalTo(view))
+        expect(anchor.bottom?.firstAttribute).to(equal(NSLayoutAttribute.Bottom))
+        expect(anchor.bottom?.secondItem).to(beIdenticalTo(window))
+        expect(anchor.bottom?.secondAttribute).to(equal(NSLayoutAttribute.Bottom))
+        expect(anchor.bottom?.constant).to(equal(0))
+        expect(anchor.bottom?.active).to(beFalse())
+        
+        expect(anchor.right?.firstItem).to(beIdenticalTo(view))
+        expect(anchor.right?.firstAttribute).to(equal(NSLayoutAttribute.Right))
+        expect(anchor.right?.secondItem).to(beIdenticalTo(window))
+        expect(anchor.right?.secondAttribute).to(equal(NSLayoutAttribute.Right))
+        expect(anchor.right?.constant).to(equal(0))
+        expect(anchor.right?.active).to(beFalse())
+    }
+    
+    func testSuperviewEdgesAnchorWithInsets() {
+        let anchor = view.anchor()
+            .edgesToSuperview(insets: UIEdgeInsets(top: 0, left: 1, bottom: -2, right: -3))
+        expect(anchor.top?.constant).to(equal(0))
+        expect(anchor.left?.constant).to(equal(1))
+        expect(anchor.bottom?.constant).to(equal(-2))
+        expect(anchor.right?.constant).to(equal(-3))
+    }
+    
     func testDimensionsAnchors() {
         let anotherView = UIView()
         

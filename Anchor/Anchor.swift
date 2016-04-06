@@ -130,6 +130,13 @@ public struct Anchor {
         return right(to: superview.right, constant: c)
     }
     
+    public func edgesToSuperview(insets insets: UIEdgeInsets = UIEdgeInsetsZero) -> Anchor {
+        return topToSuperview(constant: insets.top)
+            .leftToSuperview(constant: insets.left)
+            .bottomToSuperview(constant: insets.bottom)
+            .rightToSuperview(constant: insets.right)
+    }
+    
     // MARK: Anchor to superview axises
     public func centerXToSuperview() -> Anchor {
         guard let superview = view.superview else {
