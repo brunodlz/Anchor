@@ -63,6 +63,22 @@ class AnchorTests: XCTestCase {
         expect(anchor.right?.active).to(beFalse())
     }
     
+    func testSuperviewAxisAnchors() {
+        let xAxisAnchor = view.anchor().centerXToSuperview()
+        expect(xAxisAnchor.centerX?.firstItem).to(beIdenticalTo(view))
+        expect(xAxisAnchor.centerX?.firstAttribute).to(equal(NSLayoutAttribute.CenterX))
+        expect(xAxisAnchor.centerX?.secondItem).to(beIdenticalTo(window))
+        expect(xAxisAnchor.centerX?.secondAttribute).to(equal(NSLayoutAttribute.CenterX))
+        expect(xAxisAnchor.centerX?.active).to(beFalse())
+        
+        let yAxisAnchor = view.anchor().centerYToSuperview()
+        expect(yAxisAnchor.centerY?.firstItem).to(beIdenticalTo(view))
+        expect(yAxisAnchor.centerY?.firstAttribute).to(equal(NSLayoutAttribute.CenterY))
+        expect(yAxisAnchor.centerY?.secondItem).to(beIdenticalTo(window))
+        expect(yAxisAnchor.centerY?.secondAttribute).to(equal(NSLayoutAttribute.CenterY))
+        expect(yAxisAnchor.centerY?.active).to(beFalse())
+    }
+    
     func testDimensionsAnchors() {
         let anotherView = UIView()
         
@@ -79,17 +95,20 @@ class AnchorTests: XCTestCase {
     }
     
     func testAxisAnchors() {
-        let xAxisAnchor = view.anchor().centerX(to: window.centerX)
+        let anotherView = UIView()
+        window.addSubview(anotherView)
+        
+        let xAxisAnchor = view.anchor().centerX(to: anotherView.centerX)
         expect(xAxisAnchor.centerX?.firstItem).to(beIdenticalTo(view))
         expect(xAxisAnchor.centerX?.firstAttribute).to(equal(NSLayoutAttribute.CenterX))
-        expect(xAxisAnchor.centerX?.secondItem).to(beIdenticalTo(window))
+        expect(xAxisAnchor.centerX?.secondItem).to(beIdenticalTo(anotherView))
         expect(xAxisAnchor.centerX?.secondAttribute).to(equal(NSLayoutAttribute.CenterX))
         expect(xAxisAnchor.centerX?.active).to(beFalse())
         
-        let yAxisAnchor = view.anchor().centerY(to: window.centerY)
+        let yAxisAnchor = view.anchor().centerY(to: anotherView.centerY)
         expect(yAxisAnchor.centerY?.firstItem).to(beIdenticalTo(view))
         expect(yAxisAnchor.centerY?.firstAttribute).to(equal(NSLayoutAttribute.CenterY))
-        expect(yAxisAnchor.centerY?.secondItem).to(beIdenticalTo(window))
+        expect(yAxisAnchor.centerY?.secondItem).to(beIdenticalTo(anotherView))
         expect(yAxisAnchor.centerY?.secondAttribute).to(equal(NSLayoutAttribute.CenterY))
         expect(yAxisAnchor.centerY?.active).to(beFalse())
     }
