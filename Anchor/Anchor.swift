@@ -1,28 +1,28 @@
 import UIKit
 
-extension UIView {
-    func anchor() -> Anchor { return Anchor(view: self) }
+public extension UIView {
+    public func anchor() -> Anchor { return Anchor(view: self) }
     
-    var top: NSLayoutAnchor { return topAnchor }
-    var left: NSLayoutAnchor { return leftAnchor }
-    var bottom: NSLayoutAnchor { return bottomAnchor }
-    var right: NSLayoutAnchor { return rightAnchor }
-    var height: NSLayoutDimension { return heightAnchor }
-    var width: NSLayoutDimension { return widthAnchor }
-    var centerX: NSLayoutXAxisAnchor { return centerXAnchor }
-    var centerY: NSLayoutYAxisAnchor { return centerYAnchor }
+    public var top: NSLayoutAnchor { return topAnchor }
+    public var left: NSLayoutAnchor { return leftAnchor }
+    public var bottom: NSLayoutAnchor { return bottomAnchor }
+    public var right: NSLayoutAnchor { return rightAnchor }
+    public var height: NSLayoutDimension { return heightAnchor }
+    public var width: NSLayoutDimension { return widthAnchor }
+    public var centerX: NSLayoutXAxisAnchor { return centerXAnchor }
+    public var centerY: NSLayoutYAxisAnchor { return centerYAnchor }
 }
 
-struct Anchor {
-    let view: UIView
-    let top: NSLayoutConstraint?
-    let left: NSLayoutConstraint?
-    let bottom: NSLayoutConstraint?
-    let right: NSLayoutConstraint?
-    let height: NSLayoutConstraint?
-    let width: NSLayoutConstraint?
-    let centerX: NSLayoutConstraint?
-    let centerY: NSLayoutConstraint?
+public struct Anchor {
+    public let view: UIView
+    public let top: NSLayoutConstraint?
+    public let left: NSLayoutConstraint?
+    public let bottom: NSLayoutConstraint?
+    public let right: NSLayoutConstraint?
+    public let height: NSLayoutConstraint?
+    public let width: NSLayoutConstraint?
+    public let centerX: NSLayoutConstraint?
+    public let centerY: NSLayoutConstraint?
     
     private enum Edge {
         case Top
@@ -35,7 +35,7 @@ struct Anchor {
         case CenterY
     }
     
-    init(view: UIView) {
+    private init(view: UIView) {
         self.view = view
         top = nil
         left = nil
@@ -47,7 +47,7 @@ struct Anchor {
         centerY = nil
     }
     
-    init(view: UIView,
+    private init(view: UIView,
          top: NSLayoutConstraint?,
          left: NSLayoutConstraint?,
          bottom: NSLayoutConstraint?,
@@ -102,28 +102,28 @@ struct Anchor {
     }
     
     // MARK: Anchor to superview edges
-    func topToSuperview(constant c: CGFloat = 0) -> Anchor {
+    public func topToSuperview(constant c: CGFloat = 0) -> Anchor {
         guard let superview = view.superview else {
             return self
         }
         return top(to: superview.top, constant: c)
     }
     
-    func leftToSuperview(constant c: CGFloat = 0) -> Anchor {
+    public func leftToSuperview(constant c: CGFloat = 0) -> Anchor {
         guard let superview = view.superview else {
             return self
         }
         return left(to: superview.left, constant: c)
     }
     
-    func bottomToSuperview(constant c: CGFloat = 0) -> Anchor {
+    public func bottomToSuperview(constant c: CGFloat = 0) -> Anchor {
         guard let superview = view.superview else {
             return self
         }
         return bottom(to: superview.bottom, constant: c)
     }
     
-    func rightToSuperview(constant c: CGFloat = 0) -> Anchor {
+    public func rightToSuperview(constant c: CGFloat = 0) -> Anchor {
         guard let superview = view.superview else {
             return self
         }
@@ -131,14 +131,14 @@ struct Anchor {
     }
     
     // MARK: Anchor to superview axises
-    func centerXToSuperview() -> Anchor {
+    public func centerXToSuperview() -> Anchor {
         guard let superview = view.superview else {
             return self
         }
         return centerX(to: superview.centerX)
     }
     
-    func centerYToSuperview() -> Anchor {
+    public func centerYToSuperview() -> Anchor {
         guard let superview = view.superview else {
             return self
         }
@@ -146,49 +146,49 @@ struct Anchor {
     }
     
     // MARK: Anchor to edges
-    func top(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+    public func top(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
         return update(edge: .Top, constraint: view.topAnchor.constraintEqualToAnchor(edge, constant: c))
     }
     
-    func left(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+    public func left(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
         return update(edge: .Left, constraint: view.leftAnchor.constraintEqualToAnchor(edge, constant: c))
     }
     
-    func bottom(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+    public func bottom(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
         return update(edge: .Bottom, constraint: view.bottomAnchor.constraintEqualToAnchor(edge, constant: c))
     }
     
-    func right(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+    public func right(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
         return update(edge: .Right, constraint: view.rightAnchor.constraintEqualToAnchor(edge, constant: c))
     }
     
     // MARK: Anchor to dimensions
-    func height(constant c: CGFloat) -> Anchor {
+    public func height(constant c: CGFloat) -> Anchor {
         return update(edge: .Height, constraint: view.heightAnchor.constraintEqualToConstant(c))
     }
     
-    func height(to dimension: NSLayoutDimension, multiplier m: CGFloat = 1) -> Anchor {
+    public func height(to dimension: NSLayoutDimension, multiplier m: CGFloat = 1) -> Anchor {
         return update(edge: .Height, constraint: view.heightAnchor.constraintEqualToAnchor(dimension, multiplier: m))
     }
     
-    func width(constant c: CGFloat) -> Anchor {
+    public func width(constant c: CGFloat) -> Anchor {
         return update(edge: .Width, constraint: view.widthAnchor.constraintEqualToConstant(c))
     }
     
-    func width(to dimension: NSLayoutDimension, multiplier m: CGFloat = 1) -> Anchor {
+    public func width(to dimension: NSLayoutDimension, multiplier m: CGFloat = 1) -> Anchor {
         return update(edge: .Width, constraint: view.widthAnchor.constraintEqualToAnchor(dimension, multiplier: m))
     }
     
     // MAKR: Anchor to axises
-    func centerX(to axis: NSLayoutXAxisAnchor, constant c: CGFloat = 0) -> Anchor {
+    public func centerX(to axis: NSLayoutXAxisAnchor, constant c: CGFloat = 0) -> Anchor {
         return update(edge: .CenterX, constraint: view.centerXAnchor.constraintEqualToAnchor(axis, constant: c))
     }
     
-    func centerY(to axis: NSLayoutYAxisAnchor, constant c: CGFloat = 0) -> Anchor {
+    public func centerY(to axis: NSLayoutYAxisAnchor, constant c: CGFloat = 0) -> Anchor {
         return update(edge: .CenterY, constraint: view.centerYAnchor.constraintEqualToAnchor(axis, constant: c))
     }
     
-    func activate() -> Anchor {
+    public func activate() -> Anchor {
         view.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [top, left, bottom, right, height, width, centerX, centerY].flatMap({ $0 })
         NSLayoutConstraint.activateConstraints(constraints)
