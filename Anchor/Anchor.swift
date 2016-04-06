@@ -151,83 +151,84 @@ public struct Anchor {
             .centerY(to: superview.centerY)
     }
     
-    // MARK: Anchor to edges
-    public func top(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Top, constraint: view.topAnchor.constraintEqualToAnchor(edge, constant: c))
+    // MARK: Anchor to
+    public func top(to anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Top, constraint: view.top.constraintEqualToAnchor(anchor, constant: c))
     }
     
-    public func left(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Left, constraint: view.leftAnchor.constraintEqualToAnchor(edge, constant: c))
+    public func left(to anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Left, constraint: view.left.constraintEqualToAnchor(anchor, constant: c))
     }
     
-    public func bottom(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Bottom, constraint: view.bottomAnchor.constraintEqualToAnchor(edge, constant: c))
+    public func bottom(to anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Bottom, constraint: view.bottom.constraintEqualToAnchor(anchor, constant: c))
     }
     
-    public func right(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Right, constraint: view.rightAnchor.constraintEqualToAnchor(edge, constant: c))
+    public func right(to anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Right, constraint: view.right.constraintEqualToAnchor(anchor, constant: c))
     }
     
     // MARK: Anchor greaterOrEqual
-    public func top(greaterOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Top, constraint: view.topAnchor.constraintGreaterThanOrEqualToAnchor(a, constant: c))
+    public func top(greaterOrEqual anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Top, constraint: view.top.constraintGreaterThanOrEqualToAnchor(anchor, constant: c))
     }
     
-    public func left(greaterOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Left, constraint: view.leftAnchor.constraintGreaterThanOrEqualToAnchor(a, constant: c))
+    public func left(greaterOrEqual anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Left, constraint: view.left.constraintGreaterThanOrEqualToAnchor(anchor, constant: c))
     }
     
-    public func bottom(greaterOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Bottom, constraint: view.bottomAnchor.constraintGreaterThanOrEqualToAnchor(a, constant: c))
+    public func bottom(greaterOrEqual anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Bottom, constraint: view.bottom.constraintGreaterThanOrEqualToAnchor(anchor, constant: c))
     }
     
-    public func right(greaterOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Right, constraint: view.rightAnchor.constraintGreaterThanOrEqualToAnchor(a, constant: c))
+    public func right(greaterOrEqual anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Right, constraint: view.right.constraintGreaterThanOrEqualToAnchor(anchor, constant: c))
     }
     
     // MARK: Anchor lessOrEqual
-    public func top(lesserOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Top, constraint: view.topAnchor.constraintLessThanOrEqualToAnchor(a, constant: c))
+    public func top(lesserOrEqual anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Top, constraint: view.top.constraintLessThanOrEqualToAnchor(anchor, constant: c))
     }
     
-    public func left(lesserOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Left, constraint: view.leftAnchor.constraintLessThanOrEqualToAnchor(a, constant: c))
+    public func left(lesserOrEqual anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Left, constraint: view.left.constraintLessThanOrEqualToAnchor(anchor, constant: c))
     }
     
-    public func bottom(lesserOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Bottom, constraint: view.bottomAnchor.constraintLessThanOrEqualToAnchor(a, constant: c))
+    public func bottom(lesserOrEqual anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Bottom, constraint: view.bottom.constraintLessThanOrEqualToAnchor(anchor, constant: c))
     }
     
-    public func right(lesserOrEqual a: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .Right, constraint: view.rightAnchor.constraintLessThanOrEqualToAnchor(a, constant: c))
+    public func right(lesserOrEqual anchor: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
+        return update(edge: .Right, constraint: view.right.constraintLessThanOrEqualToAnchor(anchor, constant: c))
     }
     
-    // MARK: Anchor to dimensions
+    // MARK: Dimension anchors
     public func height(constant c: CGFloat) -> Anchor {
-        return update(edge: .Height, constraint: view.heightAnchor.constraintEqualToConstant(c))
+        return update(edge: .Height, constraint: view.height.constraintEqualToConstant(c))
     }
     
     public func height(to dimension: NSLayoutDimension, multiplier m: CGFloat = 1) -> Anchor {
-        return update(edge: .Height, constraint: view.heightAnchor.constraintEqualToAnchor(dimension, multiplier: m))
+        return update(edge: .Height, constraint: view.height.constraintEqualToAnchor(dimension, multiplier: m))
     }
     
     public func width(constant c: CGFloat) -> Anchor {
-        return update(edge: .Width, constraint: view.widthAnchor.constraintEqualToConstant(c))
+        return update(edge: .Width, constraint: view.width.constraintEqualToConstant(c))
     }
     
     public func width(to dimension: NSLayoutDimension, multiplier m: CGFloat = 1) -> Anchor {
-        return update(edge: .Width, constraint: view.widthAnchor.constraintEqualToAnchor(dimension, multiplier: m))
+        return update(edge: .Width, constraint: view.width.constraintEqualToAnchor(dimension, multiplier: m))
     }
     
-    // MAKR: Anchor to axises
+    // MARK: Axis anchors
     public func centerX(to axis: NSLayoutXAxisAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .CenterX, constraint: view.centerXAnchor.constraintEqualToAnchor(axis, constant: c))
+        return update(edge: .CenterX, constraint: view.centerX.constraintEqualToAnchor(axis, constant: c))
     }
     
     public func centerY(to axis: NSLayoutYAxisAnchor, constant c: CGFloat = 0) -> Anchor {
-        return update(edge: .CenterY, constraint: view.centerYAnchor.constraintEqualToAnchor(axis, constant: c))
+        return update(edge: .CenterY, constraint: view.centerY.constraintEqualToAnchor(axis, constant: c))
     }
     
+    // MARK: Activation
     public func activate() -> Anchor {
         view.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [top, left, bottom, right, height, width, centerX, centerY].flatMap({ $0 })
