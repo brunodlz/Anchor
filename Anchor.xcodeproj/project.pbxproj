@@ -14,6 +14,7 @@
 		2A8BB2651CB48D7300B8C093 /* AnchorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BB2641CB48D7300B8C093 /* AnchorTests.swift */; };
 		2A8BB2671CB5BA6300B8C093 /* DimensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BB2661CB5BA6300B8C093 /* DimensionTests.swift */; };
 		2A8BB2691CB5BF3F00B8C093 /* AxisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BB2681CB5BF3F00B8C093 /* AxisTests.swift */; };
+		2A8BB26B1CB5CCFA00B8C093 /* SuperviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BB26A1CB5CCFA00B8C093 /* SuperviewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		2A8BB2641CB48D7300B8C093 /* AnchorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorTests.swift; sourceTree = "<group>"; };
 		2A8BB2661CB5BA6300B8C093 /* DimensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTests.swift; sourceTree = "<group>"; };
 		2A8BB2681CB5BF3F00B8C093 /* AxisTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxisTests.swift; sourceTree = "<group>"; };
+		2A8BB26A1CB5CCFA00B8C093 /* SuperviewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperviewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				2A8BB2641CB48D7300B8C093 /* AnchorTests.swift */,
 				2A8BB2661CB5BA6300B8C093 /* DimensionTests.swift */,
 				2A8BB2681CB5BF3F00B8C093 /* AxisTests.swift */,
+				2A8BB26A1CB5CCFA00B8C093 /* SuperviewTests.swift */,
 				2A8BB2591CB48C7E00B8C093 /* Info.plist */,
 			);
 			path = AnchorTests;
@@ -241,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A8BB26B1CB5CCFA00B8C093 /* SuperviewTests.swift in Sources */,
 				2A8BB2671CB5BA6300B8C093 /* DimensionTests.swift in Sources */,
 				2A8BB2651CB48D7300B8C093 /* AnchorTests.swift in Sources */,
 				2A8BB2691CB5BF3F00B8C093 /* AxisTests.swift in Sources */,
