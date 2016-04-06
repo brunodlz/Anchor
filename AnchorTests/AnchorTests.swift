@@ -63,28 +63,6 @@ class AnchorTests: XCTestCase {
         expect(anchor.right?.active).to(beFalse())
     }
     
-    func testSuperviewAxisAnchors() {
-        let xAxisAnchor = view.anchor().centerXToSuperview()
-        expect(xAxisAnchor.centerX?.firstItem).to(beIdenticalTo(view))
-        expect(xAxisAnchor.centerX?.firstAttribute).to(equal(NSLayoutAttribute.CenterX))
-        expect(xAxisAnchor.centerX?.secondItem).to(beIdenticalTo(window))
-        expect(xAxisAnchor.centerX?.secondAttribute).to(equal(NSLayoutAttribute.CenterX))
-        expect(xAxisAnchor.centerX?.active).to(beFalse())
-        
-        let yAxisAnchor = view.anchor().centerYToSuperview()
-        expect(yAxisAnchor.centerY?.firstItem).to(beIdenticalTo(view))
-        expect(yAxisAnchor.centerY?.firstAttribute).to(equal(NSLayoutAttribute.CenterY))
-        expect(yAxisAnchor.centerY?.secondItem).to(beIdenticalTo(window))
-        expect(yAxisAnchor.centerY?.secondAttribute).to(equal(NSLayoutAttribute.CenterY))
-        expect(yAxisAnchor.centerY?.active).to(beFalse())
-    }
-    
-    func testSuperviewAnchorCenter() {
-        let centerAnchor = view.anchor().centerToSuperview()
-        expect(centerAnchor.centerX).toNot(beNil())
-        expect(centerAnchor.centerY).toNot(beNil())
-    }
-    
     func testSuperviewEdgesAnchor() {
         let anchor = view.anchor().edgesToSuperview()
         
@@ -132,25 +110,6 @@ class AnchorTests: XCTestCase {
         expect(anchor.left).toNot(beNil())
         expect(anchor.bottom).to(beNil())
         expect(anchor.right).toNot(beNil())
-    }
-    
-    func testAxisAnchors() {
-        let anotherView = UIView()
-        window.addSubview(anotherView)
-        
-        let xAxisAnchor = view.anchor().centerX(to: anotherView.centerX)
-        expect(xAxisAnchor.centerX?.firstItem).to(beIdenticalTo(view))
-        expect(xAxisAnchor.centerX?.firstAttribute).to(equal(NSLayoutAttribute.CenterX))
-        expect(xAxisAnchor.centerX?.secondItem).to(beIdenticalTo(anotherView))
-        expect(xAxisAnchor.centerX?.secondAttribute).to(equal(NSLayoutAttribute.CenterX))
-        expect(xAxisAnchor.centerX?.active).to(beFalse())
-        
-        let yAxisAnchor = view.anchor().centerY(to: anotherView.centerY)
-        expect(yAxisAnchor.centerY?.firstItem).to(beIdenticalTo(view))
-        expect(yAxisAnchor.centerY?.firstAttribute).to(equal(NSLayoutAttribute.CenterY))
-        expect(yAxisAnchor.centerY?.secondItem).to(beIdenticalTo(anotherView))
-        expect(yAxisAnchor.centerY?.secondAttribute).to(equal(NSLayoutAttribute.CenterY))
-        expect(yAxisAnchor.centerY?.active).to(beFalse())
     }
     
     func testActivatingAnchor() {
