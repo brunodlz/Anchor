@@ -120,6 +120,14 @@ class AnchorTests: XCTestCase {
         expect(anchor.right?.constant).to(equal(-3))
     }
     
+    func testSuperviewEdgesAnchorWithOmittedEdge() {
+        let anchor = view.anchor().edgesToSuperview(omitEdge: .Bottom)
+        expect(anchor.top).toNot(beNil())
+        expect(anchor.left).toNot(beNil())
+        expect(anchor.bottom).to(beNil())
+        expect(anchor.right).toNot(beNil())
+    }
+    
     func testDimensionsAnchors() {
         let anotherView = UIView()
         

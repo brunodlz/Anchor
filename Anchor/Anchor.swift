@@ -24,17 +24,6 @@ public struct Anchor {
     public let centerX: NSLayoutConstraint?
     public let centerY: NSLayoutConstraint?
     
-    private enum Edge {
-        case Top
-        case Left
-        case Bottom
-        case Right
-        case Height
-        case Width
-        case CenterX
-        case CenterY
-    }
-    
     private init(view: UIView) {
         self.view = view
         top = nil
@@ -68,7 +57,7 @@ public struct Anchor {
         self.centerY = centerY
     }
     
-    private func update(edge edge: Edge, constraint: NSLayoutConstraint) -> Anchor {
+    private func update(edge edge: NSLayoutAttribute, constraint: NSLayoutConstraint?) -> Anchor {
         var top = self.top
         var left = self.left
         var bottom = self.bottom
@@ -87,6 +76,7 @@ public struct Anchor {
         case .Width: width = constraint
         case .CenterX: centerX = constraint
         case .CenterY: centerY = constraint
+        default: return self
         }
         
         return Anchor(
@@ -130,11 +120,12 @@ public struct Anchor {
         return right(to: superview.right, constant: c)
     }
     
-    public func edgesToSuperview(insets insets: UIEdgeInsets = UIEdgeInsetsZero) -> Anchor {
+    public func edgesToSuperview(omitEdge e: NSLayoutAttribute = .NotAnAttribute, insets: UIEdgeInsets = UIEdgeInsetsZero) -> Anchor {
         return topToSuperview(constant: insets.top)
             .leftToSuperview(constant: insets.left)
             .bottomToSuperview(constant: insets.bottom)
             .rightToSuperview(constant: insets.right)
+            .update(edge: e, constraint: nil)
     }
     
     // MARK: Anchor to superview axises
