@@ -3,15 +3,15 @@ UIView extensions for concise auto layout setup using NSLayoutAnchor
 
 Convert this mess:
 ```
-mapView.translatesAutoresizingMaskIntoConstraints = false
-mapView.leadingAnchor.constraintEqualToAnchor(superview.leadingAnchor).active = true
-mapView.trailingAnchor.constraintEqualToAnchor(superview.trailingAnchor).active = true
-mapView.topAnchor.constraintEqualToAnchor(superview.topAnchor).active = true
-mapView.bottomAnchor.constraintEqualToAnchor(superview.bottomAnchor).active = true
+view.translatesAutoresizingMaskIntoConstraints = false
+view.leadingAnchor.constraintEqualToAnchor(superview.leadingAnchor).active = true
+view.trailingAnchor.constraintEqualToAnchor(superview.trailingAnchor).active = true
+view.topAnchor.constraintEqualToAnchor(superview.topAnchor).active = true
+view.bottomAnchor.constraintEqualToAnchor(superview.bottomAnchor).active = true
 ```
 into this:
 ```
-mapView.anchorEdgesToSuperview()
+view.anchor().edgesToSuperview().activate()
 ```
 
 Or this vomit:
@@ -33,8 +33,10 @@ view2.bottomAnchor.constraintEqualToAnchor(container.bottomAnchor).active = true
 ```
 into this:
 ```
-container.anchorCenterToSuperview()
-view1.anchorEdgesToSuperView(omit: .Bottom)
-view2.anchorTopTo(view1.bottomAnchor)
-view2.anchorEdgesToSuperView(omit: .Top)
+container.anchor().centerToSuperview().activate()
+view1.anchor().edgesToSuperView(omitEdge: .Bottom).activate()
+view2.anchor()
+     .top(to: view1.bottom)
+     .edgesToSuperview(omitEdge: .Top)
+     .activate()
 ```
