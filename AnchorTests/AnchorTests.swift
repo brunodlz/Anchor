@@ -134,21 +134,6 @@ class AnchorTests: XCTestCase {
         expect(anchor.right).toNot(beNil())
     }
     
-    func testDimensionsAnchors() {
-        let anotherView = UIView()
-        
-        let constantAnchor = anotherView.anchor().height(constant: 100)
-        expect(constantAnchor.height?.constant).to(equal(100))
-        expect(constantAnchor.height?.active).to(beFalse())
-        
-        let viewAnchor = view.anchor().height(to: anotherView.height)
-        expect(viewAnchor.height?.firstItem).to(beIdenticalTo(view))
-        expect(viewAnchor.height?.firstAttribute).to(equal(NSLayoutAttribute.Height))
-        expect(viewAnchor.height?.secondItem).to(beIdenticalTo(anotherView))
-        expect(viewAnchor.height?.secondAttribute).to(equal(NSLayoutAttribute.Height))
-        expect(viewAnchor.height?.active).to(beFalse())
-    }
-    
     func testAxisAnchors() {
         let anotherView = UIView()
         window.addSubview(anotherView)

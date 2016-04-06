@@ -12,6 +12,7 @@
 		2A8BB25A1CB48C7E00B8C093 /* Anchor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8BB2291CB480D600B8C093 /* Anchor.framework */; };
 		2A8BB2611CB48C8900B8C093 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8BB2601CB48C8900B8C093 /* Nimble.framework */; };
 		2A8BB2651CB48D7300B8C093 /* AnchorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BB2641CB48D7300B8C093 /* AnchorTests.swift */; };
+		2A8BB2671CB5BA6300B8C093 /* DimensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BB2661CB5BA6300B8C093 /* DimensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		2A8BB2591CB48C7E00B8C093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A8BB2601CB48C8900B8C093 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		2A8BB2641CB48D7300B8C093 /* AnchorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorTests.swift; sourceTree = "<group>"; };
+		2A8BB2661CB5BA6300B8C093 /* DimensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8BB2641CB48D7300B8C093 /* AnchorTests.swift */,
+				2A8BB2661CB5BA6300B8C093 /* DimensionTests.swift */,
 				2A8BB2591CB48C7E00B8C093 /* Info.plist */,
 			);
 			path = AnchorTests;
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A8BB2671CB5BA6300B8C093 /* DimensionTests.swift in Sources */,
 				2A8BB2651CB48D7300B8C093 /* AnchorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +439,7 @@
 				2A8BB25E1CB48C7E00B8C093 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
