@@ -79,6 +79,12 @@ class AnchorTests: XCTestCase {
         expect(yAxisAnchor.centerY?.active).to(beFalse())
     }
     
+    func testSuperviewAnchorCenter() {
+        let centerAnchor = view.anchor().centerToSuperview()
+        expect(centerAnchor.centerX).toNot(beNil())
+        expect(centerAnchor.centerY).toNot(beNil())
+    }
+    
     func testSuperviewEdgesAnchor() {
         let anchor = view.anchor().edgesToSuperview()
         

@@ -143,6 +143,14 @@ public struct Anchor {
         return centerY(to: superview.centerY)
     }
     
+    public func centerToSuperview() -> Anchor {
+        guard let superview = view.superview else {
+            return self
+        }
+        return centerX(to: superview.centerX)
+            .centerY(to: superview.centerY)
+    }
+    
     // MARK: Anchor to edges
     public func top(to edge: NSLayoutAnchor, constant c: CGFloat = 0) -> Anchor {
         return update(edge: .Top, constraint: view.topAnchor.constraintEqualToAnchor(edge, constant: c))
