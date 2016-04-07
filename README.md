@@ -1,5 +1,5 @@
 # Anchor
-UIView extensions for concise auto layout setup using NSLayoutAnchor
+Translates NSLayoutAnchor into a more concise and readable format
 
 Convert this mess:
 ```
@@ -40,3 +40,6 @@ view2.anchor()
      .edgesToSuperview(omitEdge: .Top)
      .activate()
 ```
+
+# License
+MIT license. See the `LICENSE` file for details.
