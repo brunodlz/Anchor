@@ -91,6 +91,19 @@ public struct Anchor {
             centerY: centerY)
     }
     
+    private func insert(anchor: Anchor) -> Anchor {
+        return Anchor(
+            view: self.view,
+            top: anchor.top ?? top,
+            left: anchor.left ?? left,
+            bottom: anchor.bottom ?? bottom,
+            right: anchor.right ?? right,
+            height: anchor.height ?? height,
+            width: anchor.width ?? width,
+            centerX: anchor.centerX ?? centerX,
+            centerY: anchor.centerY ?? centerY)
+    }
+    
     // MARK: Anchor to superview edges
     public func topToSuperview(constant c: CGFloat = 0) -> Anchor {
         guard let superview = view.superview else {
@@ -121,11 +134,12 @@ public struct Anchor {
     }
     
     public func edgesToSuperview(omitEdge e: NSLayoutAttribute = .NotAnAttribute, insets: UIEdgeInsets = UIEdgeInsetsZero) -> Anchor {
-        return topToSuperview(constant: insets.top)
+        let superviewAnchors = topToSuperview(constant: insets.top)
             .leftToSuperview(constant: insets.left)
             .bottomToSuperview(constant: insets.bottom)
             .rightToSuperview(constant: insets.right)
             .update(edge: e, constraint: nil)
+        return self.insert(superviewAnchors)
     }
     
     // MARK: Anchor to superview axises
