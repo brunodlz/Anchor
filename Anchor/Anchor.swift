@@ -243,6 +243,7 @@ public struct Anchor {
     }
     
     // MARK: Activation
+    @discardableResult
     public func activate() -> Anchor {
         view.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [top, left, bottom, right, height, width, centerX, centerY].flatMap({ $0 })
