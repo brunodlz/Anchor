@@ -18,10 +18,10 @@ class DimensionTests: XCTestCase {
         let anchor = view.anchor().width(constant: 100).height(constant: 101)
         
         expect(anchor.width?.firstItem).to(beIdenticalTo(view))
-        expect(anchor.width?.relation).to(equal(NSLayoutRelation.Equal))
+        expect(anchor.width?.relation).to(equal(NSLayoutRelation.equal))
         expect(anchor.width?.constant).to(equal(100))
         expect(anchor.height?.firstItem).to(beIdenticalTo(view))
-        expect(anchor.height?.relation).to(equal(NSLayoutRelation.Equal))
+        expect(anchor.height?.relation).to(equal(NSLayoutRelation.equal))
         expect(anchor.height?.constant).to(equal(101))
     }
     
@@ -30,15 +30,15 @@ class DimensionTests: XCTestCase {
         let anchor = view.anchor().width(to: anotherView.width).height(to: anotherView.height)
 
         expect(anchor.width?.firstItem).to(beIdenticalTo(view))
-        expect(anchor.width?.firstAttribute).to(equal(NSLayoutAttribute.Width))
+        expect(anchor.width?.firstAttribute).to(equal(NSLayoutAttribute.width))
         expect(anchor.width?.secondItem).to(beIdenticalTo(anotherView))
-        expect(anchor.width?.secondAttribute).to(equal(NSLayoutAttribute.Width))
-        expect(anchor.width?.relation).to(equal(NSLayoutRelation.Equal))
+        expect(anchor.width?.secondAttribute).to(equal(NSLayoutAttribute.width))
+        expect(anchor.width?.relation).to(equal(NSLayoutRelation.equal))
         
         expect(anchor.height?.firstItem).to(beIdenticalTo(view))
-        expect(anchor.height?.firstAttribute).to(equal(NSLayoutAttribute.Height))
+        expect(anchor.height?.firstAttribute).to(equal(NSLayoutAttribute.height))
         expect(anchor.height?.secondItem).to(beIdenticalTo(anotherView))
-        expect(anchor.height?.secondAttribute).to(equal(NSLayoutAttribute.Height))
-        expect(anchor.height?.relation).to(equal(NSLayoutRelation.Equal))
+        expect(anchor.height?.secondAttribute).to(equal(NSLayoutAttribute.height))
+        expect(anchor.height?.relation).to(equal(NSLayoutRelation.equal))
     }
 }

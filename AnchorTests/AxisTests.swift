@@ -19,32 +19,32 @@ class AxisTests: XCTestCase {
         let anchor = view.anchor().centerX(to: anotherView.centerX).centerY(to: anotherView.centerY)
         
         expect(anchor.centerX?.firstItem).to(beIdenticalTo(view))
-        expect(anchor.centerX?.firstAttribute).to(equal(NSLayoutAttribute.CenterX))
+        expect(anchor.centerX?.firstAttribute).to(equal(NSLayoutAttribute.centerX))
         expect(anchor.centerX?.secondItem).to(beIdenticalTo(anotherView))
-        expect(anchor.centerX?.secondAttribute).to(equal(NSLayoutAttribute.CenterX))
-        expect(anchor.centerX?.relation).to(equal(NSLayoutRelation.Equal))
+        expect(anchor.centerX?.secondAttribute).to(equal(NSLayoutAttribute.centerX))
+        expect(anchor.centerX?.relation).to(equal(NSLayoutRelation.equal))
         
         expect(anchor.centerY?.firstItem).to(beIdenticalTo(view))
-        expect(anchor.centerY?.firstAttribute).to(equal(NSLayoutAttribute.CenterY))
+        expect(anchor.centerY?.firstAttribute).to(equal(NSLayoutAttribute.centerY))
         expect(anchor.centerY?.secondItem).to(beIdenticalTo(anotherView))
-        expect(anchor.centerY?.secondAttribute).to(equal(NSLayoutAttribute.CenterY))
-        expect(anchor.centerY?.relation).to(equal(NSLayoutRelation.Equal))
+        expect(anchor.centerY?.secondAttribute).to(equal(NSLayoutAttribute.centerY))
+        expect(anchor.centerY?.relation).to(equal(NSLayoutRelation.equal))
     }
     
     func testSuperviewAxisAnchors() {
         let anchor = view.anchor().centerXToSuperview().centerYToSuperview()
         
         expect(anchor.centerX?.firstItem).to(beIdenticalTo(view))
-        expect(anchor.centerX?.firstAttribute).to(equal(NSLayoutAttribute.CenterX))
+        expect(anchor.centerX?.firstAttribute).to(equal(NSLayoutAttribute.centerX))
         expect(anchor.centerX?.secondItem).to(beIdenticalTo(window))
-        expect(anchor.centerX?.secondAttribute).to(equal(NSLayoutAttribute.CenterX))
-        expect(anchor.centerX?.relation).to(equal(NSLayoutRelation.Equal))
+        expect(anchor.centerX?.secondAttribute).to(equal(NSLayoutAttribute.centerX))
+        expect(anchor.centerX?.relation).to(equal(NSLayoutRelation.equal))
         
         expect(anchor.centerY?.firstItem).to(beIdenticalTo(view))
-        expect(anchor.centerY?.firstAttribute).to(equal(NSLayoutAttribute.CenterY))
+        expect(anchor.centerY?.firstAttribute).to(equal(NSLayoutAttribute.centerY))
         expect(anchor.centerY?.secondItem).to(beIdenticalTo(window))
-        expect(anchor.centerY?.secondAttribute).to(equal(NSLayoutAttribute.CenterY))
-        expect(anchor.centerY?.relation).to(equal(NSLayoutRelation.Equal))
+        expect(anchor.centerY?.secondAttribute).to(equal(NSLayoutAttribute.centerY))
+        expect(anchor.centerY?.relation).to(equal(NSLayoutRelation.equal))
     }
     
     func testSuperviewAnchorCenter() {

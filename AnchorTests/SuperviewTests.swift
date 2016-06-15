@@ -56,7 +56,7 @@ class SuperviewTests: XCTestCase {
     }
     
     func testSuperviewEdgesAnchorWithOmittedEdge() {
-        let anchor = view.anchor().edgesToSuperview(omitEdge: .Bottom)
+        let anchor = view.anchor().edgesToSuperview(omitEdge: .bottom)
         
         expect(anchor.top).toNot(beNil())
         expect(anchor.left).toNot(beNil())
